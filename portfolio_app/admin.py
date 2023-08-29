@@ -5,3 +5,4 @@ class treeview(admin.ModelAdmin):
     list_display=['name','email','subject','message']
 admin.site.register(visitorquery,treeview)
 
+    

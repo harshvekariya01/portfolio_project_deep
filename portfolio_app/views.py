@@ -22,9 +22,11 @@ class home_view(TemplateView):
 
 
     def post(self, request, *args, **kwargs):
+        print("================================= POST")
         context = self.get_context_data(**kwargs)
         
         if request.method == 'POST':
+            print("=================================== IF")
             form_error = False
             FullName = request.POST.get('name', None)
             Email_ID = request.POST.get('email', None)
@@ -64,16 +66,16 @@ class home_view(TemplateView):
                                     """
 
                         recipientsc = [visitor.email]
-                        recipients = ["karanvaru37833@gmail.com"]
+                        recipients = ["deepfadadu21@gmail.com"]
                         msg = MIMEText(email_text)
                         msgc = MIMEText(email_textc)
-                        msg["Subject"] = "Karan Portfolio"
-                        msgc["Subject"] = "Karan Varu"
+                        msg["Subject"] = "Deep Portfolio"
+                        msgc["Subject"] = "Deep Fadadu"
                         msg["From"] = visitor.email
 
                         smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-                        smtp_server.login("karanvaru37833@gmail.com", "jybpstbceegwqfgx")
-                        smtp_server.sendmail("karanvaru37833@gmail.com", recipients, msg.as_string())
+                        smtp_server.login("deepfadadu21@gmail.com", "qkyskrdriquwezii")
+                        smtp_server.sendmail("deepfadadu21@gmail.com", recipients, msg.as_string())
                         smtp_server.sendmail(visitor.email, recipientsc, msgc.as_string())
                         smtp_server.quit()
                         return redirect('portfolio_app:home_view')

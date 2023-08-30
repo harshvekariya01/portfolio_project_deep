@@ -22,11 +22,9 @@ class home_view(TemplateView):
 
 
     def post(self, request, *args, **kwargs):
-        print("================================= POST")
         context = self.get_context_data(**kwargs)
         
         if request.method == 'POST':
-            print("=================================== IF")
             form_error = False
             FullName = request.POST.get('name', None)
             Email_ID = request.POST.get('email', None)

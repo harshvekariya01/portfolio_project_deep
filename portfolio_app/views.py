@@ -60,7 +60,7 @@ class home_view(TemplateView):
                         email_textc = f"""Thank you {FullName}
                                     I will contact you shortly
                                     Regards,
-                                    Karan Varu
+                                    Deep Fadadu
                                     """
 
                         recipientsc = [visitor.email]
